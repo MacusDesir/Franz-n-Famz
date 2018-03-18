@@ -1,23 +1,21 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
+
   get 'carts/show'
 
   resources :checkouts
   devise_for :users
 
-=======
->>>>>>> ffa4f6632126406f820532409edf6b86b6cefbf9
 
   devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
 
-<<<<<<< HEAD
+
   unauthenticated :user do
     root to: "devise#sessions#new"
   end
   # root 'devise/sessions#new'
-=======
+
   root 'products#new'
->>>>>>> ffa4f6632126406f820532409edf6b86b6cefbf9
+
 
   resources :reviews
   resources :products
