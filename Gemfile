@@ -4,9 +4,9 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+gem 'devise'
 gem 'materialize-sass'
-gem 'material_icons' 
+gem 'material_icons'
 gem 'httparty'
 # gem 'rescue_groups'
 
