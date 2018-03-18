@@ -3,20 +3,10 @@ Rails.application.routes.draw do
   get 'carts/show'
 
   resources :checkouts
-  devise_for :users
-
-
   devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
 
-
-  unauthenticated :user do
-    root to: "devise#sessions#new"
-  end
-  # root 'devise/sessions#new'
-
   root 'products#new'
-
-
+  
   resources :reviews
   resources :products
   # resources :cart, only: [:show] do
