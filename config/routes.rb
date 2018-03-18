@@ -2,7 +2,15 @@ Rails.application.routes.draw do
   resources :checkouts
   devise_for :users
   devise_for :admins
-  root 'login#index'
+
+  authenticated :user do
+    root to: "products#index"
+  end
+
+  unauthenticated :user do
+    root to: "devise/sessions#new"
+  end
+  # root 'devise/sessions#new'
 
   resources :reviews
   resources :products

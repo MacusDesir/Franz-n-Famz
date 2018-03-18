@@ -1,14 +1,20 @@
-<link rel="stylesheet" href="clear3.css">
-<link rel="stylesheet" href="reviews.css">
-<p id="notice"><%= notice %></p>
 
-<h1>Reviews</h1>
-
+<!-- <p id="notice"><%= notice %></p> -->
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo left">Reviews</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li class="active"><a href="login#index">Home</a></li>
+      <li class="active"><a href="products#index">Pets</a></li>
+      <li class="active"><a href="reviews#index">Reviews</a></li>
+    </ul>
+  </div>
+</nav>
 <table>
   <thead>
     <tr>
-      <th>Comment</th>
-      <th>Product</th>
+      <th>Tell us about your experience:</th>
+      <th>With which pet?</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,10 +23,10 @@
     <% @reviews.each do |review| %>
       <tr>
         <td><%= review.comment %></td>
-        <td><%= review.product %></td>
-        <td><%= link_to 'Show', review %></td>
+        <td><%= review.product.name %></td>
+        <!-- <td><%= link_to 'Show', review %></td> -->
         <td><%= link_to 'Edit', edit_review_path(review) %></td>
-        <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -2,17 +2,17 @@
 
 <body>
 
-<nav>
-  <div class="nav-wrapper">
-    <form>
-       <div class="input-field">
-         <input id="search" type="search" required>
-         <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-         <i class="material-icons">close</i>
-       </div>
-    </form>
-  </div>
-</nav>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo left">Pets</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li class="active"><a href="login#index">Home</a></li>
+        <li class="active"><a href="products#index">Pets</a></li>
+        <li class="active"><a href="reviews#index">Reviews</a></li>
+      </ul>
+    </div>
+  </nav>
+
 
 <table>
   <!-- <thead>
@@ -26,7 +26,7 @@
 <div class="listings">
   <tbody>
     <% @products.each do |product| %>
-      <ul>
+      <ul class="collapsible popout" data-collapsible="accordion" >
         <li>
           <img src="http://via.placeholder.com/100x100" />
           <h3><%= product.name %></h3>
