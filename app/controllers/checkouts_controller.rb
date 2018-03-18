@@ -10,6 +10,7 @@ class CheckoutsController < ApplicationController
   # GET /checkouts/1
   # GET /checkouts/1.json
   def show
+    @product = Product.show
   end
 
   # GET /checkouts/new

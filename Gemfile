@@ -7,6 +7,8 @@ end
 
 gem 'hirb'
 gem 'devise'
+gem 'redis', '~> 3.0.1'
+gem 'hiredis', '~> 0.4.5'
 
 # gem 'material_icons'
 gem 'httparty'
