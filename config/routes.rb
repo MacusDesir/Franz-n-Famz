@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  # devise_for :users
-  # devise_for :admins
+  devise_for :users
+  devise_for :admins
   root 'login#index'
-  get 'login/index'
 
   resources :reviews
   resources :products
