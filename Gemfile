@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 gem 'devise'
 gem 'materialize-sass'
-gem 'material_icons'
+# gem 'material_icons'
 gem 'httparty'
 # gem 'rescue_groups'
 
