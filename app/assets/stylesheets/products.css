@@ -1,9 +1,5 @@
-/*
+
 * {margin: 0; padding: 0;}
-body {
-  background-image: url("tranquil2.jpg");
-  background-size: cover;
-}
 div .listings {
   margin: 20px;
 }
@@ -41,4 +37,3 @@ li:hover {
   background: #eee;
   cursor: pointer;
 }
-*/
