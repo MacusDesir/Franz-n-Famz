@@ -1,19 +1,18 @@
 Rails.application.routes.draw do
 
-  get 'carts/show'
-
-  resources :checkouts
   devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
 
   root 'products#new'
-
+  
+  get 'carts/show'
+  resources :checkouts
   resources :reviews
   resources :products
 
   resources :cart, only: [:show] do
-    put 'add/:product_id', to: 'carts#add', as: 
+    put 'add/:product_id', to: 'carts#add', as:
   :add_to
-    put 'remove/:product_id' to: 'carts#remove', as: 
+    put 'remove/:product_id' to: 'carts#remove', as:
   :remove_from
   end
 
