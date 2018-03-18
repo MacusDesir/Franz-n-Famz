@@ -1,15 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
-  devise_for :admins
 
-  authenticated :user do
-    root to: "products#index"
-  end
+  devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
 
-  unauthenticated :user do
-    root to: "devise/sessions#new"
-  end
-  # root 'devise/sessions#new'
+  root 'products#new'
 
   resources :reviews
   resources :products
