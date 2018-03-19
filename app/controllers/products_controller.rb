@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :find_product
   # GET /products
   # GET /products.json
   def index
@@ -12,7 +11,6 @@ class ProductsController < ApplicationController
   def show
    @review = Review.new
    @product = Product.find(params[:id])
-   @cart_action = @product.cart_action current_user.try :id
   end
 
   # GET /products/new
@@ -75,16 +73,3 @@ class ProductsController < ApplicationController
       params.require(:product).permit(:name, :description, :price_in_cents)
     end
   end
-
-  # protected 
-
-    def find_product
-      if id = Slug[params[:id]]
-        @product = Product.find(id)
-      else
-        @product = Product.find(params[:id])
-      end
-
-    rescue ActiveRecord::RecordNotFound
-      redire_to root_url
-    end

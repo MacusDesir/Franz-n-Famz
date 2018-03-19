@@ -18,8 +18,7 @@
           <li><%=link_to "Register", new_user_registration_path%></li>
           <li><%=link_to "Login", new_user_session_path%></li>
         <%end%>
-        
-        <%end%>
+      </ul>
     </div>
   </nav>
 
@@ -43,7 +42,7 @@
           <p><%= product.description %> Price: $<%= product.formatted_price %> <%= link_to 'Edit', edit_product_path(product) %> or <%= link_to 'Remove', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
         </li>
       </ul>
-      <% end %>
+    <% end %>
   </tbody>
 </div>
 <%= link_to 'New Listing', new_product_path %>
