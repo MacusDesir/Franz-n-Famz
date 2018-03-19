@@ -9,6 +9,11 @@ class Product < ApplicationRecord
       format("%.2f", price_in_dollars)
   end
 
+  def show
+    @product = Product.find(params[:id])
+    @cart_action = @product.cart_action current_user.try :id
+  end
+
   def to_param
   	self.slug
   end

@@ -1,4 +1,5 @@
 class Slug
+	belongs_to :users
 	class << self
 
 		def [](slug)

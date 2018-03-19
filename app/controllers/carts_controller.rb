@@ -19,6 +19,6 @@ class CartsController < ApplicationController
   private
 
   def current_user_cart
-  	"cart#{current_user_id}"
+  	"cart#{current_user.id}"
   end
 end
