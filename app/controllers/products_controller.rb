@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_filter :find_product
+  before_action :find_product
   # GET /products
   # GET /products.json
   def index
@@ -76,7 +76,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  protected 
+  # protected 
 
     def find_product
       if id = Slug[params[:id]]
@@ -88,4 +88,3 @@ class ProductsController < ApplicationController
     rescue Activereord::RecordNotFound
       redire_to root_url
     end
-end
