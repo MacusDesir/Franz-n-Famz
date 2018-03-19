@@ -35,5 +35,5 @@ class Product < ApplicationRecord
   		unless Slug[self.slug].nil? || Slug[self.slug] == self.id.errors.add(:slug, "Sorry! Item is already taken")
   		end
   	end
-  end
+ 
 end

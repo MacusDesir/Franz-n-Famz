@@ -85,6 +85,6 @@ class ProductsController < ApplicationController
         @product = Product.find(params[:id])
       end
 
-    rescue Activereord::RecordNotFound
+    rescue ActiveRecord::RecordNotFound
       redire_to root_url
     end
